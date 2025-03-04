@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hirbernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hirbernate.connection.url">jdbc:mysql://localhost:3306/myhiber</property>
+		<property name="hirbernate.connection.username">root</property>
+		<property name="hirbernate.connectuin.password">root@123</property>
+		<property name="hirbernate.dialect">org.hibernte.dialect.MySQLDialect</property>
+		<property name="hirbernate.hbm2ddl.auto">update</property>
+		<property name="hirbernate.Show_sql">true</property>
+	</session-factory>
+
+</hibernate-configuration>

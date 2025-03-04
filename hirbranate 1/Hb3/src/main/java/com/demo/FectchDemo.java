@@ -1,0 +1,24 @@
+package com.demo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+
+public class FectchDemo {
+	public static void main(String[] args) {
+		// get load
+		SessionFactory sf = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		Session session = sf.openSession();
+		//
+		// get-student :id
+		//Student st = (Student) session.get(Student.class, 2);
+		//System.out.println(st);
+		Address ad = (Address) session.get(Address.class, 1);
+		
+		System.out.println(ad.getCity());
+		session.close();
+		sf.close();
+	}
+
+}

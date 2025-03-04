@@ -1,0 +1,8 @@
+package com.demo;
+
+public class Certificate {
+	private String Coureses;
+	private String Duration;
+	
+
+}

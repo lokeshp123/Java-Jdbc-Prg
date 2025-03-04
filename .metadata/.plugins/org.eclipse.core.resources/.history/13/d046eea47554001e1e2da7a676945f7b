@@ -1,0 +1,33 @@
+package com.Dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.cofig.MyCofigurationBank;
+
+public class BankinfromationDao {
+	public int insertBankinfromation() {
+		int check =0;
+		Connection con = null;
+		PreparedStatement pst = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			MyCofigurationBank.getcConnection();
+			String query = "insert into  Bankinfromation value (?,?,?,?,?)";
+			pst=con.prepareCall(query);
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+		
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return check;
+	}
+
+}

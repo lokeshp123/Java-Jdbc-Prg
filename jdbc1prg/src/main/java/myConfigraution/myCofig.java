@@ -1,0 +1,6 @@
+package myConfigraution;
+
+public class myCofig {
+	
+
+}

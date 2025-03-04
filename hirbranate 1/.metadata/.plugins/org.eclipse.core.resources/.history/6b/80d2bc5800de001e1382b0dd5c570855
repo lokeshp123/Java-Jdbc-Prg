@@ -1,0 +1,16 @@
+package com.demo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class FectchDemo {
+	 public static void main(String[] args) {
+		// get load 
+		 SessionFactory sf=new Configuratioacn().configure("hibernate.cfg.xml")
+	    		   .buildSessionFactory();
+		 Session session = sf.openSession();
+		 	sf.close();
+	}
+
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	<hibernate-configuration>
+	<session-factory>
+	<property name="hiberente.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<property name="hiberenate.connection.url">jdbc:mysql://localhost:3306/Jap50</property>
+	<property name="hiberenate.connection.username">root</property>
+	<property name="hiberenate.connection.password">root@123</property>
+	<property name="hiberenate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	<property name="hiberenate.hbm2ddl.auto">create</property>
+	<property name="hiberenate.show_sql">true</property>
+	<property name="hiberenate.format_sql">true</property>
+	<mapping   class ="com.demo.Empone"/>
+	<mapping   class ="com.demo.project"/>
+
+	
+	
+	</session-factory>
+	
+	
+	</hibernate-configuration>

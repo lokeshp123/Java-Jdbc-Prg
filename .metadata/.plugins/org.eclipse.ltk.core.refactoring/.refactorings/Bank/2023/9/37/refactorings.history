@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;com.Dao.BankinfromationDao.insertBankinfromation(...).pst&apos; in &apos;com.Dao.BankinfromationDao.insertBankinfromation(...)&apos; to field&#x0D;&#x0A;- Original project: &apos;Bank&apos;&#x0D;&#x0A;- Original element: &apos;com.Dao.BankinfromationDao.insertBankinfromation(...).pst&apos;&#x0D;&#x0A;- Field name: &apos;pst&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;pst&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.Dao{BankinfromationDao.java" name="pst" selection="322 10" stamp="1694867920173" static="false" version="1.0" visibility="2"/>
+</session>

@@ -1,0 +1,52 @@
+package com.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.Map_one_to_one.Answer;
+
+
+
+public class MapDemo {
+		public static void main(String[] args) {
+			//SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+ 		  // .buildSessionFactory();
+			
+			
+			SessionFactory sf = new Configuration().configure("hibernate.cfg.xml")
+					.buildSessionFactory();
+			//create a Question frist
+		    Question q = new Question();
+		    q.setQuestionid(1212);
+		    q.setQuestion("What is java?");
+		    
+		 // create Answers frist
+			Answer a = new Answer();
+			a.setAnswerId(342);
+			a.setAnswer("java is prg lange");
+			a.setQuestion(q);
+			
+			// create Answers second
+			Answer a1 = new Answer();
+			a1.setAnswerId(343);
+			a1.setAnswer("java is most Scurey lang");
+			a1.setQuestion(q);
+		    
+			// create Answers Thrid
+			Answer a2 = new Answer();
+			a2.setAnswerId(343);
+			a2.setAnswer("java is best lang");
+			a2.setQuestion(q);
+			
+			List<Answer> list = new ArrayList<Answer>();
+			list.add(a);
+			list.add(a1);
+			list.add(a2);
+			
+			sf.close();
+		}
+
+}

@@ -1,0 +1,10 @@
+package com.Dao;
+
+public class BankinfromationDao {
+	public int insertBankinfromation() {
+		int check =0;
+		
+		return check;
+	}
+
+}

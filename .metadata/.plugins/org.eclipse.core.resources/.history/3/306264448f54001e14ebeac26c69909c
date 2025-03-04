@@ -1,0 +1,58 @@
+package com.cofig;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.model.Bankinfromation;
+
+public class MyCofigurationBank {
+	public static Connection getConnection() {
+		Connection con= null;
+		
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/BankOfSBI","root", "root@123");
+		} catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return con;
+		
+	}
+	public static void closeconnection(PreparedStatement pst, Connection con) {
+		try {
+			pst.close();
+			con.close();
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	public static void preparedStatementSet(PreparedStatement pst, Connection con, String query) throws SQLException {
+	
+		try {
+			
+			Bankinfromation bk = new Bankinfromation();
+			pst=con.prepareStatement(query);
+			pst.setInt(1,bk.getAccountNo());
+			pst.setString(2,bk.getANameHoder());
+			pst.setString(3,bk.getAaddressHoder());
+			pst.setString(4,bk.getAcityName());
+			pst.setDouble(5,bk.getAHoderBalance());
+			pst.executeUpdate(query);
+		
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		 
+	}
+        
+}

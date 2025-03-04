@@ -1,0 +1,11 @@
+package com.dao;
+
+public class StudentDao {
+	public int insertStudent(Studente s)
+	{
+	int check = 0;
+	
+	
+	return check;
+ }
+}

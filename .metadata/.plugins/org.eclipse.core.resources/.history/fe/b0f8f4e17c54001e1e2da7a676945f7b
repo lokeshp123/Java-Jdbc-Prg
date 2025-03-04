@@ -1,0 +1,15 @@
+package com.demo;
+
+import com.Dao.BankinfromationDao;
+import com.model.Bankinfromation;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        BankinfromationDao bs = new BankinfromationDao();
+        Bankinfromation bl = new Bankinfromation();
+        
+    }
+}

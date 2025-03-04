@@ -1,0 +1,39 @@
+package com.Map_one_to_one;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
+public class Answer {
+	@Id
+	@Column(name="anser_id")
+	private int  AnswerId;
+	public int getAnswerId() {
+		return AnswerId;
+	}
+
+	public void setAnswerId(int answerId) {
+		AnswerId = answerId;
+	}
+	public String getAnswer() {
+		return Answer;
+	}
+	public void setAnswer(String answer) {
+		Answer = answer;
+	}
+	private String Answer;
+	public Answer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Answer(int answerId, String answer) {
+		super();
+		AnswerId = answerId;
+		Answer = answer;
+	}
+	
+	
+
+}

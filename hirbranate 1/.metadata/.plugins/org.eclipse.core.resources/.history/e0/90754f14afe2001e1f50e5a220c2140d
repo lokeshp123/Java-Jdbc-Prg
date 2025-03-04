@@ -1,0 +1,23 @@
+package com.demo;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+@Entity
+public class project {
+	@Id
+	
+	private int pid;
+	@Column(name="Project_Name")
+	private String projectname;
+	@ManyToMany
+	private List<Empone>empones;
+	
+	
+	
+	
+	
+}

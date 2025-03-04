@@ -1,0 +1,47 @@
+package com.demo;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+
+public class Answer {
+	@Id
+	@Column(name="anser_id")
+	private int  AnswerId;
+	private String Answer;
+
+	private Question_one_to_may question;
+	public int getAnswerId() {
+		return AnswerId;
+	}
+	public void setAnswerId(int answerId) {
+		AnswerId = answerId;
+	}
+	public String getAnswer() {
+		return Answer;
+	}
+	public void setAnswer(String answer) {
+		Answer = answer;
+	}
+	public Question_one_to_may getQuestion() {
+		return question;
+	}
+	public void setQuestion(Question_one_to_may question) {
+		this.question = question;
+	}
+	public Answer(int answerId, String answer, Question_one_to_may question) {
+		super();
+		AnswerId = answerId;
+		Answer = answer;
+		this.question = question;
+	}
+	public Answer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+
+}

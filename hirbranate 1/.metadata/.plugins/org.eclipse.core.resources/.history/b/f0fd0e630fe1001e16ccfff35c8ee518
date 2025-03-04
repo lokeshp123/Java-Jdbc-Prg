@@ -1,0 +1,57 @@
+package com.Map_one_to_one;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class MapDemo {
+	public static void main(String[] args) {
+		SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+	    		   .buildSessionFactory();
+		//create a Question frist
+		Question q = new Question();
+		q.setQuestionid(1212);
+		q.setQuestion("What is java?");
+		
+		
+		
+		
+		// create Answers frist
+		Answer a = new Answer();
+		a.setAnswerId(342);
+		a.setAnswer("java is prg lange");
+		q.setAnswer(a);
+		
+		
+		//create a Question Second
+		Question q2 =new Question();
+		
+		q2.setQuestionid(242);
+		q2.setQuestion("What is Collection Framwork?");
+		
+		
+		// create Answers  second
+		Answer a2 = new Answer();
+		a2.setAnswerId(844);
+		a2.setAnswer("Api work with group of object");
+		q2.setAnswer(a2);
+		
+		
+		// session
+		 
+		Session s = sf.openSession();
+		 Transaction tx  =s.beginTransaction();
+		
+		s.save(q);
+	
+		
+		
+		 tx.commit();
+		sf.close();
+	}
+
+}

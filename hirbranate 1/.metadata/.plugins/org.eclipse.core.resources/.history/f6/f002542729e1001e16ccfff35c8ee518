@@ -1,0 +1,23 @@
+package com.demo;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+
+
+public class Mapmay_to_onedemo {
+		public static void main(String[] args) {
+			//SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+ 		  // .buildSessionFactory();
+			
+			
+			SessionFactory sf = new Configuration().configure("hibernate.cfg.xml")
+					.buildSessionFactory();
+			//create a Question frist
+		    
+		    
+			
+			sf.close();
+		}
+
+}

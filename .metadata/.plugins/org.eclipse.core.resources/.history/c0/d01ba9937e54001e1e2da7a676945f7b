@@ -1,0 +1,21 @@
+package com.demo;
+
+
+import com.model.Bankinfromation;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Bankinfromation b = new Bankinfromation();
+        b.setAccountNo(1);
+        b.setANameHoder("lokesh");
+        b.setAaddressHoder(" A/p vadchil");
+        b.setAcityName("pune");
+        b.setAHoderBalance(52000.00);
+        
+       
+        
+    }
+}

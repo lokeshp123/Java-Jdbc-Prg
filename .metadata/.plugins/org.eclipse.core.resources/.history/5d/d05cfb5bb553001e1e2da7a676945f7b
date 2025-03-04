@@ -1,0 +1,19 @@
+package com.jdbc1prg;
+
+import com.dao.StudentDao;
+import com.model.Student;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        StudentDao s = new StudentDao();
+        Student sd = new Student();
+        sd.setSid(1);
+        sd.setSname("mudassir");
+        sd.setSmobaileNo("123456789");
+        sd.setSsalary(120000.00);
+        
+        
+    }
+}

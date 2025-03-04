@@ -1,0 +1,21 @@
+package com.demo;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+
+
+
+
+
+public class Answer {
+	@Id
+	@Column(name="anser_id")
+	private int  AnswerId;
+	private String Answer;
+	private Question question;
+	
+
+	
+
+}

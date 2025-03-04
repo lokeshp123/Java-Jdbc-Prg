@@ -1,0 +1,67 @@
+package com.demo;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+
+
+
+
+public class MapDemo {
+		public static void main(String[] args) {
+			
+			
+			
+			SessionFactory sf = new Configuration().configure("hibernate.cfg.xml")
+					.buildSessionFactory();
+			Session s = sf.openSession();
+			Transaction tx = s.beginTransaction();
+			//create a Question frist
+		    QuestionOne q = new QuestionOne();
+		    q.setQuestion("What is Interface");
+		    
+		 // create Answers frist
+			AnswerOne a = new AnswerOne();
+			a.setAnswerId(234);
+			a.setAnswer("java is prg lange");
+			a.setQuestion(q);
+			
+			// create Answers second
+			AnswerOne a1 = new AnswerOne();
+			a1.setAnswerId(235);
+			a1.setAnswer("java is most Scurey lang");
+			a1.setQuestion(q);
+		    
+			// create Answers Thrid
+			AnswerOne a2 = new AnswerOne();
+			a2.setAnswerId(236);
+			a2.setAnswer("java is best lang");
+			a2.setQuestion(q);
+			
+			List<AnswerOne> list = new ArrayList<AnswerOne>();
+			list.add(a);
+			list.add(a1);
+			list.add(a2);
+			
+			q.setAnsers(list);
+			
+			//save 
+			
+			s.save(q);
+			s.save(a);
+			s.save(a1);
+			s.save(a2);
+			
+			
+			tx.commit();
+			s.close();	
+		}
+
+}

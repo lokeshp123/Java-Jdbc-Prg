@@ -1,0 +1,28 @@
+package com.Dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+
+import com.cofig.MyCofigurationBank;
+
+public class BankinfromationDao {
+	public int insertBankinfromation(BankinfromationDao b) {
+		int check =0;
+		PreparedStatement pst = null;
+		 Connection con=MyCofigurationBank.getcConnection();
+		 String query = "insert into Bankinfromation value (?,?,?,?,?)";
+		 try {
+			 MyCofigurationBank.preparedStatementSet(pst, con, query, null);
+			
+		}
+		 finally {
+			 MyCofigurationBank.closeconnection(pst, con);
+		 }
+		 
+		return check;
+		}
+		
+	}
+
+

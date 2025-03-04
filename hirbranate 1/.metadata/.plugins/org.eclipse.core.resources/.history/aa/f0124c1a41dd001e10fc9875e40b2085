@@ -1,0 +1,15 @@
+package com.demo;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+       SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+    		   .buildSessionFactory();
+       System.out.println(sf);
+       System.out.println(sf.isClosed());
+    }
+}

@@ -1,0 +1,54 @@
+package com.demo;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import javax.persistence.OneToMany;
+
+
+@Entity
+public class QuestionOne {
+	@Id
+	@Column(name="question_id")
+	private  int questionid;
+	private String question;
+	
+	@OneToMany(mappedBy = "question")
+	private  List<Answer> answers;
+	
+	
+	public int getQuestionid() {
+		return questionid;
+	}
+	public void setQuestionid(int questionid) {
+		this.questionid = questionid;
+	}
+	public String getQuestion() {
+		return question;
+	}
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	public List<Answer> getAnsers() {
+		return answers;
+	}
+	public void setAnsers(List<Answer> ansers) {
+		this.answers = ansers;
+	}
+	public QuestionOne(int questionid, String question, List<Answer> ansers) {
+		super();
+		this.questionid = questionid;
+		this.question = question;
+		this.answers = ansers;
+	}
+	public QuestionOne() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+}

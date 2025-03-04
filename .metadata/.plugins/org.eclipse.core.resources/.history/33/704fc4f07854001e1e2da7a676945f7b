@@ -1,0 +1,31 @@
+package com.Dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.cofig.MyCofigurationBank;
+
+public class BankinfromationDao {
+	public int insertBankinfromation() {
+		int check =0;
+		PreparedStatement pst = null;
+		 Connection con=MyCofigurationBank.getcConnection();
+		 String query = "insert into Bankinfromation value (?,?,?,?,?)";
+		 try {
+			pst= con.prepareStatement(query);
+			
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		}
+		 finally {
+			 MyCofigurationBank.getcConnection();
+		 }
+		 
+		return check;
+		}
+		
+	}
+
+

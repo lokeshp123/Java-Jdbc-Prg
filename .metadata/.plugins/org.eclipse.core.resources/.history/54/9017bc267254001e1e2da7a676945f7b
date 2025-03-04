@@ -1,0 +1,10 @@
+package com.model;
+
+public class Bankinfromation {
+	private int  AccountNo;
+	private String ANameHoder;
+	private String AaddressHoder;
+	private String  AcityName;
+	private double  AHoderBalance;
+
+}

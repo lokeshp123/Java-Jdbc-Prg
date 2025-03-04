@@ -1,0 +1,22 @@
+package com.demo;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class EmpmentDemo {
+	public static void main(String[] args) {
+		
+		SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+	    		   .buildSessionFactory();
+		
+		Student st1 = new Student();
+		st1.setSid(101);
+		st1.setSname("lokesh");
+		st1.setScity("vdc");
+	
+		
+		sf.close();
+		
+		
+	}
+}

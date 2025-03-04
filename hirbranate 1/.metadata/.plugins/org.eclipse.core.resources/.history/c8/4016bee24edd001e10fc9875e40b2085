@@ -1,0 +1,89 @@
+package com.demo;
+
+import java.util.Arrays;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="student_address")
+public class Address {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="address_id")
+	private int addreddId;
+	private String street;
+	private String city;
+	private boolean isopean;
+	private double x;
+	private Date addedDate;
+	private byte[] image;
+	public Address() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Address(int addreddId, String street, String city, boolean isopean, double x, Date addedDate, byte[] image) {
+		super();
+		this.addreddId = addreddId;
+		this.street = street;
+		this.city = city;
+		this.isopean = isopean;
+		this.x = x;
+		this.addedDate = addedDate;
+		this.image = image;
+	}
+	public int getAddreddId() {
+		return addreddId;
+	}
+	public void setAddreddId(int addreddId) {
+		this.addreddId = addreddId;
+	}
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public boolean isIsopean() {
+		return isopean;
+	}
+	public void setIsopean(boolean isopean) {
+		this.isopean = isopean;
+	}
+	public double getX() {
+		return x;
+	}
+	public void setX(double x) {
+		this.x = x;
+	}
+	public Date getAddedDate() {
+		return addedDate;
+	}
+	public void setAddedDate(Date addedDate) {
+		this.addedDate = addedDate;
+	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	@Override
+	public String toString() {
+		return "Address [addreddId=" + addreddId + ", street=" + street + ", city=" + city + ", isopean=" + isopean
+				+ ", x=" + x + ", addedDate=" + addedDate + ", image=" + Arrays.toString(image) + "]";
+	}
+	
+	
+
+}

@@ -1,0 +1,19 @@
+package com.demo;
+
+import java.util.List;
+
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Empone {
+	@Id
+	private int eid;
+	private String name;
+	@ManyToMany
+	private List<project>projects;
+		
+	
+}

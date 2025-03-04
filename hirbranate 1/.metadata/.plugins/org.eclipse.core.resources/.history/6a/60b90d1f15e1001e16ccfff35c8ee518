@@ -1,0 +1,70 @@
+package com.Map_one_to_one;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class MapDemo {
+	public static void main(String[] args) {
+		SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+	    		   .buildSessionFactory();
+		//create a Question frist
+		Question q = new Question();
+		q.setQuestionid(1212);
+		q.setQuestion("What is java?");
+		
+		
+		// create Answers frist
+		Answer a = new Answer();
+		a.setAnswerId(342);
+		a.setAnswer("java is prg lange");
+		q.setAnswer(a);
+		
+		
+		//create a Question Second
+		Question q2 =new Question();
+		
+		q2.setQuestionid(242);
+		q2.setQuestion("What is Collection Framwork?");
+		
+		
+		// create Answers  second
+		Answer a2 = new Answer();
+		a2.setAnswerId(844);
+		a2.setAnswer("Api work with group of object");
+		q2.setAnswer(a2);
+		
+		// create Question Thrid
+		Question q3 = new Question();
+		q3.setQuestionid(23456);
+		q3.setQuestion("What is to work with netbean?");
+		
+		// create Answers Thrid
+		Answer a3 = new Answer();
+		a3.setAnswerId(777);
+		a3.setAnswer("IDE for writing  code");
+		q3.setAnswer(a3);
+		
+		// session
+		 
+		Session s = sf.openSession();
+		 Transaction tx  =s.beginTransaction();
+		
+		s.save(q);
+		s.save(q2);
+		s.save(q3);
+		s.save(a);
+		s.save(a2);
+		s.save(a3);
+	
+		
+		
+		 tx.commit();
+		sf.close();
+	}
+
+}

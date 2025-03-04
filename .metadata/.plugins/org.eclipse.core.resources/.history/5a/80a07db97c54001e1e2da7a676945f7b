@@ -1,0 +1,13 @@
+package com.demo;
+
+import com.Dao.BankinfromationDao;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        BankinfromationDao bs = new BankinfromationDao();
+        System.out.println(bs.insertBankinfromation(bs));
+    }
+}

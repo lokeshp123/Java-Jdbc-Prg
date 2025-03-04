@@ -1,0 +1,12 @@
+package com.demo;
+
+public class Address {
+	private int addreddId;
+	private String street;
+	private String city;
+	private boolean isopean;
+	private double x;
+	private Date addedDate;
+	private byte[] image;
+
+}

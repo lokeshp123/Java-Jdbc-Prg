@@ -1,0 +1,18 @@
+package com.demo;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+
+public class Answer {
+	@Id
+	@Column(name="anser_id")
+	private int  AnswerId;
+	private String Answer;
+	@ManyToOne
+	private Question_one_to_may question;
+	
+	
+
+}

@@ -1,0 +1,24 @@
+package com.Map_one_to_one;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class MapDemo {
+	public static void main(String[] args) {
+		SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+	    		   .buildSessionFactory();
+		//create object
+		Question q = new Question();
+		q.setQuestionid(1212);
+		q.setQuestion("What is java?");
+		
+		
+		
+		
+		
+		
+		
+		sf.close();
+	}
+
+}

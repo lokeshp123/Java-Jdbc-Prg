@@ -1,0 +1,55 @@
+package com.demo;
+
+
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.event.spi.SaveOrUpdateEvent;
+
+public class EmpmentDemo {
+	public static void main(String[] args) {
+		
+		SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+	    		   .buildSessionFactory();
+		
+		Student st1 = new Student();
+		st1.setSid(101);
+		st1.setSname("lokesh");
+		st1.setScity("vdc");
+		
+		
+		Certificate ctr = new Certificate();
+		ctr.setCoureses("java");
+		ctr.setDuration("2 months");
+		st1.setCertfcte(ctr);
+		
+		
+		Student st2 = new Student();
+		st2.setSid(102);
+		st2.setSname("Mvg");
+		st2.setScity("shahada");
+		 
+		Certificate ctr1 = new Certificate();
+		ctr1.setCoureses(".net");
+		ctr1.setDuration("3 months");
+		st2.setCertfcte(ctr);
+		
+		Session s = sf.openSession();
+		Transaction tx = s.beginTransaction();
+		
+		// object save
+		
+		s.save(st1);
+		s.save(st2);
+		
+		tx.commit();
+		s.close();
+		sf.close();
+		
+		
+	}
+}

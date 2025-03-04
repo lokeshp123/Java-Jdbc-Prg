@@ -1,0 +1,31 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.model.Student;
+
+public class StudentDao {
+	
+	public int insertStudent(Student s) {
+		int check = 0;
+		Connection con = null;
+		PreparedStatement pst = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Studentinfromation","root","root@123");
+			String sql="insert into Stdinfromation(Sid,Sname,Scity,Ssalary)value (?,?,?,?)";
+			pst= con.prepareStatement(sql);
+			pst.setString(1,s.getSid());
+		} catch (ClassNotFoundException | SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return check;
+	}
+	
+}
+
+		

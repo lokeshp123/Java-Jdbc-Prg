@@ -1,0 +1,10 @@
+package com.model;
+
+public class Student {
+	private  int Sid;
+	private   String Sname;
+	private  String SmobaileNo;
+	private  double Ssalary;
+	
+
+}

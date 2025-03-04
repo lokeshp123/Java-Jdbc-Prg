@@ -1,0 +1,47 @@
+package com.demo;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+@Entity
+public class Answer {
+	@Id
+	@Column(name="Answer_id")
+	private int Answerid;
+	private String Answer;
+	@ManyToMany
+	private List<Answer>answers;
+	
+	public int getAnswerid() {
+		return Answerid;
+	}
+	public void setAnswerid(int answerid) {
+		Answerid = answerid;
+	}
+	public String getAnswer() {
+		return Answer;
+	}
+	public void setAnswer(String answer) {
+		Answer = answer;
+	}
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+	public Answer(int answerid, String answer, List<Answer> answers) {
+		super();
+		Answerid = answerid;
+		Answer = answer;
+		this.answers = answers;
+	}
+	public Answer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+}

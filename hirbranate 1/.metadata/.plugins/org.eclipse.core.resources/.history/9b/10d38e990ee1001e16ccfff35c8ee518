@@ -1,0 +1,39 @@
+package com.Map_one_to_one;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class MapDemo {
+	public static void main(String[] args) {
+		SessionFactory sf=new Configuration().configure("hibernate.cfg.xml")
+	    		   .buildSessionFactory();
+		//create a Question
+		Question q = new Question();
+		q.setQuestionid(1212);
+		q.setQuestion("What is java?");
+		
+		
+		// create Answers
+		Answer a = new Answer();
+		a.setAnswerId(342);
+		a.setAnswer("java is prg lange");
+		q.setAnswer(a);
+		
+		// session
+		
+		Session s = sf.openSession();
+		 Transaction tx  =s.beginTransaction();
+		
+		
+		
+		
+		 tx.commit();
+		sf.close();
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.demo;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.Map_one_to_one.Question;
+
+public class Answer {
+	@Id
+	@Column(name="anser_id")
+	private int  AnswerId;
+	private String Answer;
+	
+	
+	private Question question;
+
+}
